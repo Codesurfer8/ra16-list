@@ -3,13 +3,16 @@ import './App.css';
 import Listing from './components/Listing/Listing';
 import data from './components/Listing/data.json';
 
-
 function App() {
-  console.log(typeof JSON.parse(JSON.stringify(data))[0].MainImage.url_570xN)
+  let list = JSON.parse(JSON.stringify(data));
+  let arr = list.filter(item => item.MainImage !== undefined)
+
+
+
   return (
-    <>
-    <Listing items={data}/>
-    </>
+    <div className='container'>
+      <Listing items={arr} />
+    </div>
   );
 }
 
