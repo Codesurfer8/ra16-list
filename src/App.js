@@ -10,8 +10,11 @@ function App() {
 
 
   return (
-    <div className='container'>
-      <Listing items={arr} />
+    <div className='main-container'>
+      <div className='container'>
+        <Listing items={arr} />
+      </div>
+
     </div>
   );
 }

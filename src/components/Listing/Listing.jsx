@@ -25,13 +25,13 @@ function Listing({ items }) {
                 <div className="item">
                     <div className="item-image">
                         <a href={item.url}>
-                            <img src={item.MainImage.url_570xN} alt="" />
+                            <img className="image" src={item.MainImage.url_570xN} alt="" />
                         </a>
                     </div>
                     <div className="item-details">
                         <p className="item-title">{setTitle(item)}</p>
                         <p className="item-price">{setPrice(item)}</p>
-                        <p className={`item-quantity ${setQuantity(item)}`}>{item.quantity}</p>
+                        <p className={`item-quantity ${setQuantity(item)}`}>{item.quantity} left</p>
                     </div>
                 </div>
             </div>
