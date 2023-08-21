@@ -1,7 +1,24 @@
+interface ArrItems  {
+    items: []
+}
 
-function Listing({ items }) {
+interface Url {
+    url_570xN: string
+}
 
-    function setPrice(item) {
+interface Item {
+    listing_id: string,
+    url: string,
+    MainImage: Url,
+    title: string,
+    currency_code: string,
+    price: number,
+    quantity: number,
+}
+
+function Listing({items}:ArrItems) {
+
+    function setPrice(item: Item) {
         if (item.currency_code === 'USD') {
             return `$${item.price}`;
         } else if (item.currency_code === 'EUR') {
@@ -11,16 +28,16 @@ function Listing({ items }) {
         }
     }
 
-    function setTitle(item) {
+    function setTitle(item: Item) {
         return item.title.length > 50 ? `${item.title.slice(0, 50)}...` : item.title;
     }
 
-    function setQuantity(item) {
+    function setQuantity(item: Item) {
         return item.quantity <= 10 ? 'level-low' : item.quantity <= 20 && item.quantity > 10 ? 'level-medium' : 'level-high';
     }
 
     return (
-        JSON.parse(JSON.stringify(items)).map((item) => (
+        JSON.parse(JSON.stringify(items)).map((item: Item) => (
             <div className="item-list" key={item.listing_id}>
                 <div className="item">
                     <div className="item-image">

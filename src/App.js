@@ -7,8 +7,9 @@ function App() {
   let list = JSON.parse(JSON.stringify(data));
   let arr = list.filter(item => item.MainImage !== undefined)
 
+  console.log(arr)
 
-
+  
   return (
     <div className='main-container'>
       <div className='container'>
